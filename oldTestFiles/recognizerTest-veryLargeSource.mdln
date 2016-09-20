@@ -1,0 +1,44 @@
+class Rectangle {
+     var width=5
+     var height
+     
+     'calculates area
+     function calculateArea() {
+           return width*height/2
+     }
+
+}
+
+class House {
+    var windowCount=4
+    var doorCount
+    
+    class Bedroom extends Room {
+        var bed
+        var wardrobe
+        
+        function toString() {
+            return bed+wardrobe/2
+        }
+    }
+}
+
+House h1()
+
+main {
+    a=call h1.toString()+call h1.toString()
+    for(var i=0;i<10;i=i+1){
+        call print(i)
+    }
+    if(a>b) {
+        print("ali")
+    } else if(a=b) {
+        print("veli")
+    } else {
+        print("deli")
+    }
+    while(i>0){
+        i=i+4
+        print(i)
+    }
+}

@@ -1,0 +1,18 @@
+function mydisplay(a,b) {
+    call display("(")
+    call display(a)
+    call display(",")
+    call display(b)
+    call display(")")
+}
+
+main {
+
+    'for(var i=0;i<10;set i=i+1){
+        'call display("the value of i: "+i)
+        'call newline()
+    '}
+    
+    call mydisplay("ali","veli")
+    
+}

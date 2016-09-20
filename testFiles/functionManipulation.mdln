@@ -1,0 +1,48 @@
+class BaseClass {
+    function baseClassFunc(a,b) {
+        call display("In BaseClass: Result is: "+a+b)
+    }
+}
+
+class FirstClass extends BaseClass {
+    var firstClassVar=5
+    
+    function firstClassFunction() {
+        call display("inside FirstClass function")
+    }
+    
+    function printVar(a) {
+        call display(firstClassVar)
+        call newline()
+        call display(a)
+    }
+}
+
+class SecondClass extends FirstClass {
+    var secondClassVar=6
+    
+    function secondClassFunction(c) {
+        call display("inside SecondClass function with param(c) : "+c)
+        call display("  and secondClassVar= "+secondClassVar)
+    }
+}
+
+function goto(){
+    call display("inside GOTO")
+}
+
+main {
+    
+    var SecondClass c1()
+
+    var a = c1.secondClassFunction
+    
+    call a(4)
+    
+    call newline()
+    
+    var d = goto
+    
+    call d()
+    
+}

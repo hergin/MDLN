@@ -1,0 +1,30 @@
+function readableTrueFalse(t) {
+    if(t=0) {
+        return "true"
+    } else {
+        return "false"
+    }
+}
+
+main {
+
+    call newline()
+	
+	call display("string(ali)=string(ali) : " + call readableTrueFalse("ali"="ali") )
+	call newline()
+	call display("string(ali)=string(veli) : " + call readableTrueFalse("ali"="veli") )
+    call newline()
+	call display("string(ali)>string(veli) : " + call readableTrueFalse("ali">"veli") )
+	call newline()
+    call display("string(ali)<string(veli) : " + call readableTrueFalse("ali"<"veli") )
+
+    call newline()
+    call display(" 3>4 : " + call readableTrueFalse(3>4) )
+    
+    call newline()
+    call display(" 3=4 : " + call readableTrueFalse(3=4) )
+    
+    call newline()
+    call display(" 3<4 : " + call readableTrueFalse(3<4) )
+    
+}

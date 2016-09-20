@@ -1,0 +1,46 @@
+class BaseClass {
+    function baseClassFunc(a,b) {
+        call display("In BaseClass: Result is: "+a+b)
+    }
+}
+
+class FirstClass extends BaseClass {
+    var firstClassVar=5
+    
+    function firstClassFunction() {
+        call display("inside FirstClass function")
+    }
+    
+    function printVar(a) {
+        call display(firstClassVar)
+        call newline()
+        call display(a)
+    }
+}
+
+class SecondClass extends FirstClass {
+    var secondClassVar=6
+    
+    function secondClassFunction() {
+        call display("inside SecondClass function")
+    }
+}
+
+main {
+
+    'create instance of outer class (even set superclass variables)
+    var SecondClass sc1(firstClassVar=8)
+    
+    'call superclass functions
+    call sc1.firstClassFunction()
+    
+    call newline()
+    
+    'call supersuperclass functions
+    call sc1.baseClassFunc(3,4)
+    
+    call newline()
+    
+    call sc1.printVar("Var in super class: hello")
+    
+}

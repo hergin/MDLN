@@ -1,0 +1,61 @@
+#!/bin/bash
+
+# edit target as appropriate
+
+name=guest
+domain=troll.cs.ua.edu
+target=$name@$domain
+
+##################
+function if_error
+    {
+    if [[ $? -ne 0 ]]; then # check return code passed to function
+    echo "###"
+    echo $1
+    echo "###"
+    exit $?
+    fi
+    }
+###################
+
+# check number of arguments, should be three
+if [ $# != 1 ] ; then
+    echo Usage: email.set your_crimson_email_address_goes_here
+    exit 1
+fi
+
+if [ $EMAIL"x" != "x" ] ; then
+    echo !!!
+    echo !!! Your email address has already been set
+    echo !!!
+    exit 1
+fi
+
+if [ `basename $1 @crimson.ua.edu`"@crimson.ua.edu" != $1 ] ; then
+    if [ `basename $1 @cs.ua.edu`"@cs.ua.edu" != $1 ] ; then
+        echo !!!
+        echo !!! You did not supply your crimson email address
+        echo !!!
+        exit 1
+    fi
+fi
+
+last=`cat ~/.bash_info`
+
+if [ $last"x" != "x" ] ; then
+    if [ $last != $1 ] ; then
+        echo !!!
+        echo !!! See your instructor about changing your email address
+        echo !!!
+        exit 1
+    fi
+fi
+
+echo export EMAIL=$1 >> ~/.bashrc
+echo $1 > ~/.bash_info
+
+echo !!!
+echo !!! Your crimson email address is now registered.
+echo !!! Please close this terminal and open up a new one for
+echo !!!
+echo !!! changes to take effect.

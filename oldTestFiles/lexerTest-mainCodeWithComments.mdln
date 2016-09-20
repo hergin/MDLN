@@ -1,0 +1,6 @@
+main/*comment0*/{
+/* comment11 */
+    a = a +1; /*comment2*/
+    b=/**/b-2; 
+}
+/* comment3 */

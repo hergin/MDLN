@@ -1,0 +1,58 @@
+#!/bin/bash
+
+# edit target as appropriate
+
+name=submit
+domain=troll.cs.ua.edu
+target=$name@$domain
+
+##################
+function if_error
+    {
+    if [[ $? -ne 0 ]]; then # check return code passed to function
+    echo "###"
+    echo $1
+    echo "###"
+    exit $?
+    fi
+    }
+###################
+
+# check number of arguments, should be three
+if [ $# != 3 ] ; then
+    echo "Usage: submit XXX YYY ZZZ"
+    echo "    " where XXX is the course name \(like cs150 or cs250\)
+    echo "    " where YYY is section number or instructor
+    echo "    " where ZZZ is the assignment name
+    exit 1
+fi
+
+if [ $EMAIL"x" == "x" ] ; then
+    echo !!!
+    echo !!! Before you can submit, you need to run the set.email program
+    echo !!!
+    exit 1
+fi
+
+if [ $EMAIL != `cat ~/.bash_info` ] ; then
+    echo !!!
+    echo !!! Your email address has unexpectedly changed
+    echo !!!
+    exit 1
+fi
+
+server=troll.cs.ua.edu
+class=$1
+section=$2
+assignment=$3
+
+echo Submitting $EMAIL\'s assignment $assignment for $class
+
+touch $EMAIL; tar cvz * | ssh $name@$server \
+            "cat > /home/grader/$class/$section/$assignment/$EMAIL.tgz \
+            && graderize $class $section $assignment $EMAIL \
+            && echo success | \
+                mail -s submitted\ $assignment $EMAIL \
+            && echo $section `cat ~/.bash_info`  | \
+                mail -s $EMAIL\ SUBMITTED\ $assignment lusth@cs.ua.edu \
+            && echo submit by $EMAIL appeared to be successful"

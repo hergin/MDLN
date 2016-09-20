@@ -1,0 +1,25 @@
+class BaseClass {
+
+	function b() {}
+	
+	function a() {
+		call b()
+	}
+	
+}
+
+class FirstClass extends BaseClass {
+
+	function b() {
+		call display("yes")
+	}
+
+}
+
+main {
+
+	var FirstClass f1()
+    
+	call f1.a()
+    
+}

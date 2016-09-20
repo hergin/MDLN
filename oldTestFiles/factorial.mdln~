@@ -1,0 +1,16 @@
+
+function fact(n) {
+    if(n=1) {
+        return n
+    } else {
+        var res=n*call fact(n-1)
+        return res
+    }
+}
+main {
+    call display("Enter the number for calculating factorial: ")
+    call newline()
+    var c = call readInteger()
+    call display(c+"! = "+call fact(c))
+    
+}

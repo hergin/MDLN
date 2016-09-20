@@ -1,0 +1,35 @@
+class A {
+
+	var varA
+
+	function functionA(a) {
+		call display("InClass A -> Param is: "+a)
+		call newline()
+		call display("InClass A.functionA -> Attribute is: "+varA)
+	}
+
+}
+
+class B extends A {
+
+	var varB
+	
+	function functionB(a,b) {
+		call display("InClass B -> Params are: "+a+","+b)
+		call newline()
+		call display("InClass B.functionB -> Attribute is: "+varB)
+	}
+
+}
+
+main {
+	
+	var B b1(varB=12,varA=33)
+	
+	call b1.functionA(13)
+	
+	call newline()
+	
+	call b1.functionB(99,100)
+    
+}

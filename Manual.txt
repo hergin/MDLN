@@ -1,0 +1,110 @@
+MDLN (modeling language) Manual
+===============================
+
+1. The name:
+
+    It is assumed to be a modeling language interpreter at first, so I gave that name. But requirements of the language project forced me to go and implement a regular language like all others. Name remained the same.
+
+2. Variable Declaration:
+
+    var a=4
+    var str="try"
+
+3. Function definition. Functions explicitly returns value:
+
+    function functionName(param1, param2) {
+        var temp
+        temp = param1 + param2
+        return temp
+    }
+
+4. Class definition sample:
+
+    class ClassName {
+        var attr1
+        function function1(param1, param2) {
+        }
+    }
+
+5. Inheritance: All inheritance types are supported. Inside the body of the class you can either implement a baseclass function again or define new functions. -Only same level inheritance. (Definition environments of extender and extendee are the same) The syntax is:
+
+    class ClassName extends AnotherClassName {
+
+    }
+
+6. Conditionals:
+
+    if(expr) {
+        ...
+    } else if(expr) {
+        ....
+    } else {
+        ....
+    }
+
+7. Expressions: Check the grammar rule
+
+    expression :   primary
+               |   primary operator expression
+
+8. Assignment:
+
+    var a=3
+    set a=4
+
+9. Object definition. Objects can be created using "var" and in constructor, user can specify what each attribute will be:
+
+    var SomeClass someObject(attr1=4, attr2="someString")
+
+10. Function calls -Only one level of DOT operator (call a1.func1() -> OK,  call a1.b1.c1.funcC1() -> NOT OK):
+
+    call aRegularFunction()
+    call aClass.aMethod()
+
+11. Loops:
+
+    for(var i=0;i<10;set i=i+1) {
+        ...
+    }
+
+    var i=0
+    while(i<10) {
+       ....
+    }
+
+12. Prototype declaration (will tell parser that, you will define a variable with that name. If you forgot to define later, you will see the error):
+
+    forward varToBeDeclaredLater
+
+13. Operators:
+
+    string + string   -> concatenate
+    string + int      -> string + string(int)
+    int + string      -> string(int) + string
+    string * int      -> concatenate 'string' 'int' times
+    int * string      -> same as above
+    string > string   -> check first letters ('a'<'b')
+    string = string   -> same as above
+    string < string   -> same as above
+    
+    int + int     -> sum
+    int - int     -> subtract
+    int * int     -> multiply
+    int / int     -> divide
+    int > int     -> 0 if true, else 1
+    int = int     -> same as above
+    int < int     -> same as above
+
+14. BuiltIn Functions:
+
+    function display(x)               -> evaluate 'x' and display
+    function newline()                -> prints a newline
+    function readString()             -> reads a string from keyboard
+    function readInteger()            -> reads an integer from keyboard
+    function createArray(size)        -> creates an array of size 'size'
+    function arrayGet(arr,ind)        -> get the 'ind'th element from array 'arr'
+    function arraySet(arr,ind,newVal) -> set the 'ind'th element of array 'arr' to 'newVal'
+    function parseInteger(str)        -> return an integer version of 'str'
+    function not(b)                   -> return logical not of 'b'
+    function power(a,b)               -> return 'b'th power of 'a'
+    function prettyPrint(var)         -> pretty prints the 'var' (var can be a function declaration, class declaration or var declaration)

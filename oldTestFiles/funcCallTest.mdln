@@ -1,0 +1,23 @@
+var k=1
+
+function mydisplay(a,b) {
+    var c=4
+    if(a>3) {
+        call display(a+c+k+b)
+        call newline()
+        call mydisplay(a-1)
+    }
+}
+
+function getVar()
+{
+    return 3
+}
+
+main {
+    var y=2
+    call mydisplay(y*5,2)
+    
+    var a=call getVar()
+    
+}

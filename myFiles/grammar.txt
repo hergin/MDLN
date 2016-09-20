@@ -1,0 +1,107 @@
+program                 :   optStructList main
+
+optStructList           :   EmPtY
+                        |   structList
+
+structList              :   struct 
+                        |   struct structList
+
+struct                  :   classDeclaration
+                        |   functionDeclaration
+                        |   variableDeclaration
+                        |   prototypeDeclaration
+                        
+prototypeDeclaration    :   FORWARD ID
+
+classDeclaration        :   CLASS ID optExtendsStatement declarationBlock
+
+optExtendsStatement     :   EmPtY
+                        |   extendsStatement
+
+extendsStatement        :   EXTENDS ID
+
+declarationBlock        :   OCURLY optStructList CCURLY
+
+functionDeclaration     :   FUNCTION ID OPAREN optParameterList CPAREN OCURLY optStatementList CCURLY
+
+optParameterList        :   EmPtY
+                        |   parameterList
+
+parameterList           :   ID
+                        |   ID COMMA parameterList
+                        
+optStatementList        :   EmPtY
+                        |   statementList
+
+statementList           :   statement
+                        |   statement statementList
+
+statement               :   ifStatement
+                        |   forStatement
+                        |   whileStatement
+                        |   regularStatement
+                        |   variableDeclaration
+                        |   variableAssignment
+                        
+variableAssignment      :   SET ID ASSIGN expression
+
+ifStatement             :   IF OPAREN expression CPAREN regularBlock optElse
+
+regularBlock            :   OCURLY statementList CCURLY
+
+optElse                 :   EmPtY
+                        |   else
+
+else                    :   ELSE regularBlock
+                        |   ELSE ifStatement
+
+forStatement            :   FOR OPAREN variableDeclaration SEMICOLON expression SEMICOLON variableAssignment CPAREN regularBlock
+
+whileStatement          :   WHILE OPAREN expression CPAREN regularBlock
+
+regularStatement        :   optReturn expression
+
+optReturn               :   EmPtY
+                        |   RETURN
+
+variableDeclaration     :   VAR ID
+                        |   VAR ID ASSIGN expression
+                        |   VAR ID ID OPAREN optAttributeList CPAREN
+
+optAttributeList        :   EmPtY
+                        |   attributeList
+
+attributeList           :   attribute
+                        |   attribute COMMA attributeList
+
+attribute               :   ID ASSIGN primary
+
+expression              :   primary
+                        |   primary operator expression
+
+primary                 :   INTEGER
+                        |   STRING
+                        |   ID
+                        |   ID DOT ID
+                        |   functionCall
+                        |   OPAREN expression CPAREN
+                        
+functionCall            :   CALL ID OPAREN optArgumentList CPAREN
+                        |   CALL ID DOT ID OPAREN optArgumentList CPAREN
+
+optArgumentList         :   EmPtY
+                        |   argumentList
+                        
+argumentList            :   expression
+                        |   expression COMMA argumentList
+
+operator                :   ADD
+                        |   SUBTRACT
+                        |   MULTIPLY
+                        |   DIVIDE
+                        |   ASSIGN
+                        |   LESSTHAN
+                        |   GREATERTHAN
+                        |   DOT
+
+main                    :   MAIN OCURLY optStatementList CCURLY

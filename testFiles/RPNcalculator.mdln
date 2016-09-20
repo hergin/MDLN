@@ -1,0 +1,81 @@
+'stack class
+class Stack {
+    var currentIndex=0
+    var array = call createArray(100)
+    
+    function push(val) {
+        call arraySet(array,currentIndex,val)
+        set currentIndex = currentIndex+1
+    }
+    
+    function pop() {
+        set currentIndex = currentIndex-1
+        return call arrayGet(array,currentIndex)
+    }
+    
+}
+
+'check is temp is an operator or not
+function isOperator(temp) {
+    if(temp="+") {
+        return 0
+    } else if(temp="-") {
+        return 0
+    } else if(temp="*") {
+        return 0
+    } else if(temp="/") {
+        return 0
+    } else if(temp="^") {
+        return 0
+    } else if(temp="log") {
+        return 0
+    } else if(temp="sin") {
+        return 0
+    } else if(temp="cos") {
+        return 0
+    } else if(temp="tan") {
+        return 0
+    }
+    return 1
+}
+
+main {
+    
+    var Stack rpnStack()
+    
+    call display("Start entering you expression (q to finish) :")
+    call newline()
+    var temp = call readString()
+    
+    while (call not(temp="q")) {
+        if(call isOperator(temp)) {
+            if(temp="+") {
+                var add1 = call rpnStack.pop()
+                var add2 = call rpnStack.pop()
+                call rpnStack.push(add1+add2)
+            } else if(temp="-") {
+                var sub1 = call rpnStack.pop()
+                var sub2 = call rpnStack.pop()
+                call rpnStack.push(sub2-sub1)
+            } else if(temp="*") {
+                var mul1 = call rpnStack.pop()
+                var mul2 = call rpnStack.pop()
+                call rpnStack.push(mul1*mul2)
+            } else if(temp="/") {
+                var div1 = call rpnStack.pop()
+                var div2 = call rpnStack.pop()
+                call rpnStack.push(div2/div1)
+            } else if(temp="^") {
+                var pow1 = call rpnStack.pop()
+                var pow2 = call rpnStack.pop()
+                call rpnStack.push(call power(pow2,pow1))
+            }
+        } else {
+            call rpnStack.push(call parseInteger(temp))
+        }
+        set temp = call readString()
+    }
+    
+    call display("Result is: "+call rpnStack.pop())
+    
+}

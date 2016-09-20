@@ -1,0 +1,3 @@
+function ali () {
+    a = 32;
+}

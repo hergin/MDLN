@@ -1,0 +1,41 @@
+class Object {
+    var name
+    
+    function setName(n) {
+        set name = n
+    }
+    
+    function printName() {
+        call display(name)
+    }
+}
+
+class Coordinate extends Object {
+    var x
+    var y
+    
+    function setXY(newX,newY) {
+        set x = newX
+        set y = newY
+    }
+    
+    function prettyPrint() {
+        call display("("+x+","+y+")")
+    }
+}
+
+main {
+    'var Object o1()
+    'call o1.setName("huseyin")
+    'call o1.printName()
+    
+    var array1 = call createArray(5)
+   
+    call arraySet("array1", 3, 12)
+    
+    var Coordinate c1(name="c1")
+    call c1.setXY(3,5)
+    call c1.prettyPrint()
+    call newline()
+    call c1.printName()
+}

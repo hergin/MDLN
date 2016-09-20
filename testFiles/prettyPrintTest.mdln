@@ -1,0 +1,51 @@
+'stack class
+class Stack {
+    var currentIndex=0
+    var array = call createArray(100)
+    
+    function push(val) {
+        call arraySet(array,currentIndex,val)
+        set currentIndex = currentIndex+1
+    }
+    
+    function pop() {
+        set currentIndex = currentIndex-1
+        return call arrayGet(array,currentIndex)
+    }
+    
+}
+
+'check is temp is an operator or not
+function isOperator(temp) {
+    if(temp="+") {
+        return 0
+    } else if(temp="-") {
+        return 0
+    } else if(temp="*") {
+        return 0
+    } else if(temp="/") {
+        return 0
+    } else if(temp="^") {
+        return 0
+    } else if(temp="log") {
+        return 0
+    } else if(temp="sin") {
+        return 0
+    } else if(temp="cos") {
+        return 0
+    } else if(temp="tan") {
+        return 0
+    }
+    return 1
+}
+
+main {
+	call prettyPrint(isOperator)
+	call newline()
+	
+	call prettyPrint(Stack)
+	call newline()
+	
+	var a="ali"
+	call prettyPrint(a)
+}

@@ -1,0 +1,26 @@
+main {
+
+    var a=0
+    var d=2
+    
+    if(3<2) {
+    
+        set a=4
+        
+    } else if(1<1) {
+    
+        set a=2
+        
+     } else {
+     
+        set a="ali"
+        
+        set d=3
+        
+        set a=d
+     
+     }
+     
+     var b=d
+    
+}

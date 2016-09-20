@@ -1,0 +1,40 @@
+class Ali extends Veli {
+    class A {
+        class Point extends Dot {
+        }
+    }
+    class D {
+    }
+}
+function deneme(a) {
+    for(var Pont x(a=(a+b),b=call a(a+b+c,2/3/4));i<10;return a){
+        call print(i)
+    }
+}
+
+
+class Sanane {
+
+}
+
+function a(b,c) {
+    if(a>b) {  
+        print("ali")
+    } else if(a=b) {
+        print("ali")
+    } else {
+        print("ali")
+    }
+    
+     while(i>0){
+        i=i+4
+        print(i)
+    }
+}
+
+main {
+    while(i>0){
+        i=i+4
+        print(i)
+    }
+}

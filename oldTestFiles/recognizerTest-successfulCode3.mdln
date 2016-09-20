@@ -1,0 +1,12 @@
+class ali {
+   a=3;
+   b=2;
+   function add(c) {
+       a =b+2;
+   };
+};
+
+main {
+    ali=3;
+    call add(3);
+}

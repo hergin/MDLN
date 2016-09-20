@@ -1,0 +1,36 @@
+class TheOne {
+    var IamEverywhere
+}
+
+forward Object
+
+class Point extends Object {
+    var c
+    var d
+}
+
+class Object extends TheOne {
+    var name
+}
+
+class Coordinate extends Point {
+    var x
+    var y
+    
+    'pretty print coordinate
+    function prettyprint(){
+        call display("("+x+","+y+")")
+ 
+    }
+}
+
+'main of the program
+main {
+    var Coordinate C1(x=3,c=2,y=1)
+    var Coordinate C2(x=4,y=3)
+     
+    call C1.prettyprint()
+    call newline()
+    call C2.prettyprint()
+     
+}

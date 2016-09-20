@@ -1,0 +1,15 @@
+class Point {
+
+}
+class Coordinate extends Point {
+     var x
+    var y
+    
+    'calculates distance between this and coordinate c
+    function calculateDistance(c) {
+        return 5*(c+2)/x*a
+    }
+}
+    
+main {
+}

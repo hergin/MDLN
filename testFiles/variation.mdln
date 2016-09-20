@@ -1,0 +1,37 @@
+class BaseClass {
+
+	function getName() {
+		call display("BaseClass")
+	}
+	
+}
+
+class FirstClass extends BaseClass {
+
+	function getName() {
+		call display("FirstClass")
+	}
+
+}
+
+class SecondClass extends BaseClass {
+
+	function getName() {
+		call display("SecondClass")
+	}
+
+}
+
+main {
+
+	var FirstClass f1()
+    
+	call f1.getName()
+	
+	call newline()
+	
+	var SecondClass s1()
+	
+	call s1.getName()
+    
+}

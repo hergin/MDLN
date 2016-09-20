@@ -1,0 +1,84 @@
+forward Point
+
+'forward P1
+
+'coordinate class
+class Coordinate extends Point {
+    'x and y coordinates
+    var x
+    var y
+    var a
+    var b
+    
+    forward g
+   ' forward k
+    
+    function f() {
+        call g()
+    }
+    
+    function g() {
+        call f()
+    }
+    
+    'calculates distance between this and coordinate c
+    function calculateDistance(c) {
+        call calculateDistance()
+        return 5*(call c.getX()+2)/3*2
+    }
+    
+    'pretty print coordinate
+    function prettyprint(){
+        call display("("+x+" "+y+")")
+        if(a>b) {   'if test
+            call display("ali")
+        } else if(a=b) {
+            call display(3)
+        } else {
+            call display(a)
+        }
+    }
+}
+
+class Point {
+
+}
+
+var c3
+
+function addCoords(c1,c2){
+    var Coordinate result()
+    call result.setX(call c3.getX()+call c2.getX())
+    call result.setY(call c1.getY()+call c2.getY())
+    return result
+}
+
+'main of the program
+main {
+    var a=1
+    var b=2
+    var Coordinate c1(x=3,y=8)
+    call c1.print()
+    
+    for(var i=0;i<10;set i=i+1){
+        call display(i)
+        call display(i)
+    }
+    
+    if(a>b) {   'if test
+        call display("ali")
+    } else if(a=b) {
+        call display(3)
+    } else {
+        call display(a)
+    }
+    
+    var i
+    
+    'set d=3
+    
+    while(i>0){
+        set i=i+4
+        call display(i)
+    }
+}

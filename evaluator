@@ -1,0 +1,11 @@
+#!/bin/bash
+
+# Huseyin Ergin - hergin@crimson.ua.edu
+
+make compile
+echo "==========="
+echo "RESULT"
+echo "==========="
+java -cp bin:lib/cloning-1.8.5.jar:lib/objenesis-1.2.jar edu.ua.cs.hergin.proglan.evaluator.Evaluator $1
+echo ""
+echo "==========="

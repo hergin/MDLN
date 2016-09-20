@@ -1,0 +1,42 @@
+function printArrayElements(arr) {
+    call display("Array Contents")
+    call newline()
+    call display("==============")
+    call newline()
+    for(var i=0;i<10;set i=i+1) {
+        call display(i+": "+call arrayGet(arr,i))
+        call newline()
+    }
+}
+
+'sample array program
+main {
+
+    var array1 = call createArray(100)
+    
+    call display("EMPTY ARRAY")
+    call newline()
+    call printArrayElements(array1)
+    
+    call arraySet(array1, 5, "hi")
+    
+    call newline()
+    call display("SET ARRAY[5] to 'hi'")
+    call newline()
+    call printArrayElements(array1)
+    
+    call arraySet(array1, 2, 12)
+    
+    call newline()
+    call display("SET ARRAY[2] to 12")
+    call newline()
+    call printArrayElements(array1)
+    
+    call arraySet(array1, 9, "elementX")
+    
+    call newline()
+    call display("SET ARRAY[9] to 'elementX'")
+    call newline()
+    call printArrayElements(array1)
+    
+}

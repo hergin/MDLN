@@ -1,0 +1,3 @@
+class Albert extends Einstein {
+    function goto(a,b);
+}

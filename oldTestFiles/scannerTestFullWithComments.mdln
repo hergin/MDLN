@@ -1,0 +1,22 @@
+/*
+The class
+*/
+class Albert extends Einstein {
+    function goto(a,b);
+}
+
+/*
+The function
+*/
+function ali () {
+    a = 32;
+    return selam;
+}
+
+/*
+main of the program
+*/
+main {
+    a = a +1;
+    b=b-2; 
+}

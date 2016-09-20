@@ -1,0 +1,59 @@
+'coordinate class
+class Coordinate {
+    'x and y coordinates
+    var x
+    var y
+    
+    'calculates distance between this and coordinate c
+    function calculateDistance(c) {
+        return 5*(call c.getX()+2)/3*2
+    }
+    
+    'pretty print coordinate
+    function print(){
+        call display("("+x+" "+y+")")
+        var a
+        var b
+        if(a>b) {   'if test
+            call print("ali")
+        } else if(a=b) {
+            call print(3)
+        } else {
+            call print(a)
+        }
+    }
+}
+
+function addCoords(c1,c2){
+    var Coordinate result()
+    call result.setX(call c1.getX()+call c2.getX())
+    call result.setY(call c1.getY()+call c2.getY())
+    return result
+}
+
+'main of the program
+main {
+    var Coordinate c1(x=3,y=8)
+    call c1.print()
+    
+    for(var i=0;i<10;set i=i+1){
+        call display(i)
+        call display(i)
+    }
+    
+    var a=c1.print
+    
+    if(a>b) {   'if test
+        call display("ali")
+    } else if(a=b) {
+        call display(3)
+    } else {
+        call display(a)
+    }
+    
+    var i
+    while(i>0){
+        set i=i+4
+        call display(i)
+    }
+}
