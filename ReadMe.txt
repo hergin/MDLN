@@ -1,6 +1,9 @@
 Huseyin Ergin - hergin@crimson.ua.edu
 =====================================
 
+This project holds a language I implemented in a class. The language has parser, lexer, recognizer, evaluator, pretty printer.
+
+
 TIP: When you run example with make, you will first see the source code of the program
 then output of the program while execution.
 
